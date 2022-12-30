@@ -1,3 +1,4 @@
+import './App.css';
 import { useEffect, useState } from "react";
 
 function App() {
@@ -17,15 +18,17 @@ function App() {
   fetchData();
 
   return (
-    <>
+    <div className="App">
       <h1>Dogs</h1>
-      {dogs.length > 0 ?
-        dogs.slice(0, 15).map(item => 
-          <img key={item} src={item}></img>
-          )
-        : <p>loading...</p>
-      }
-    </>
+      <div className="dogs__container">
+        {dogs.length > 0 ?
+          dogs.slice(0, 15).map(item => 
+              <img className="dogs__img" src={item}></img>
+            )
+          : <p>loading...</p>
+        }
+      </div>
+    </div>
   );
 }
 
