@@ -3,16 +3,27 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [formulario, setFormulario] = useState({name: ''})
-  const [breed, setBreed] = useState([]);
+  const [breed, setBreed] = useState('')
+  const [breeds, setBreeds] = useState([]);
 
   useEffect(() => {
+    if(breed != '') {
+      fetchBreed(breed);
+    } else {
       fetchData();  
-  }, []);
+    }
+  }, [breed]);
 
   const fetchData = async () => {
     const res = await fetch('https://dog.ceo/api/breed/hound/images');
     const data = await res.json();
-    setBreed(data.message);
+    setBreeds(data.message);
+  }
+
+  const fetchBreed = async (breed) => {
+    const res = await fetch(`https://dog.ceo/api/breed/${breed}/images`);
+    const data = await res.json();
+    setBreeds(data.message);
   }
 
   const handleChange = (e) => {
@@ -21,15 +32,11 @@ function App() {
       [e.target.name]: e.target.value
     });
     console.log(formulario);
-    
   }
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    setBreed([
-      ...breed,
-      formulario.name
-    ]);
+    setBreed(formulario.name);
     setFormulario({name: ''});
   }
 
@@ -47,8 +54,8 @@ function App() {
         <button>Search</button>
       </form>
       <div className="dogs__container">
-        {breed.length > 0 ?
-          breed.slice(0, 15).map(item => 
+        {breeds.length > 0 ?
+          breeds.slice(0, 15).map(item => 
               <img key={item} className="dogs__img" src={item}></img>
             )
           : <p>loading...</p>
