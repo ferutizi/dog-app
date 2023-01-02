@@ -15,15 +15,23 @@ function App() {
   }, [breed]);
 
   const fetchData = async () => {
-    const res = await fetch('https://dog.ceo/api/breed/hound/images');
-    const data = await res.json();
-    setBreeds(data.message);
+    try {
+      const res = await fetch('https://dog.ceo/api/breed/hound/images');
+      const data = await res.json();
+      setBreeds(data.message);
+    } catch(error) {
+      console.log(error);
+    }
   }
 
   const fetchBreed = async (breed) => {
-    const res = await fetch(`https://dog.ceo/api/breed/${breed}/images`);
-    const data = await res.json();
-    setBreeds(data.message);
+    try {
+      const res = await fetch(`https://dog.ceo/api/breed/${breed}/images`);
+      const data = await res.json();
+      setBreeds(data.message);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   const handleChange = (e) => {
@@ -31,7 +39,6 @@ function App() {
       ...formulario,
       [e.target.name]: e.target.value
     });
-    console.log(formulario);
   }
   
   const handleSubmit = (e) => {
