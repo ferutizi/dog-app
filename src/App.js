@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState } from "react";
 import Dogs from './components/Dogs';
 import Favs from './components/Favs';
+import Formulario from './components/Formulario';
 
 function App() {
   const [formulario, setFormulario] = useState({name: ''})
@@ -37,34 +38,11 @@ function App() {
     }
   }
 
-  const handleChange = (e) => {
-    setFormulario({
-      ...formulario,
-      [e.target.name]: e.target.value
-    });
-  }
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setBreed(formulario.name);
-    setFormulario({name: ''});
-  }
-
   return (
     <div className="App">
       <div className='title__container'>
         <h1>Dog Breeds</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            name='name'
-            type='text'
-            value={formulario.name}
-            onChange={handleChange}
-            autoFocus
-            className='input'
-          />
-          <button>Search</button>
-        </form>
+        <Formulario formulario={formulario} setFormulario={setFormulario} setBreed={setBreed} />
       </div>
       <Dogs breeds={breeds} fav={fav} setFav={setFav} />
       <Favs fav={fav} setFav={setFav} />
