@@ -10,9 +10,9 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
-  padding: 2em 1em;
+  padding: 2em 0;
   border-radius: 1em;
   border: 1px solid rgba(128, 128, 128, 0.322)
 }
@@ -67,8 +67,15 @@ button {
 
 .fav__heart {
   position: relative;
-  right: 1em;
+  right: -5em;
+  top: -1.2em;
   text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.8);
+  cursor: pointer;
+}
+
+.fav__container {
+  max-width: 6rem;
+  max-height: 6rem;
 }
 
 .dog__heart {
@@ -77,9 +84,10 @@ button {
   right: -5.7em;
   top: -1.1em;
   text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.8);
+  cursor: pointer;
 }
 
-.uno {
-  max-width: 192px;
-  max-height: 192px;
+.img__container {
+  max-width: 12rem;
+  max-height: 12rem;
 }
