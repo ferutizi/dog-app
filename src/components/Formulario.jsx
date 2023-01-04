@@ -1,3 +1,5 @@
+import './Formulario.css';
+
 const Formulario = ( {formulario, setFormulario, setBreed} ) => {
 
     const handleChange = (e) => {

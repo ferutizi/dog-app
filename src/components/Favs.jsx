@@ -1,3 +1,5 @@
+import './Favs.css';
+
 const Favs = ({ fav, setFav }) => {
     
     const deleteFav = (dog) => {

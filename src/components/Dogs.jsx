@@ -1,3 +1,5 @@
+import './Dogs.css';
+
 const Dogs = ({ breeds, fav, setFav }) => {
 
     const addFav = (dog) => {
