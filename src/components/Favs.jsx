@@ -7,7 +7,7 @@ const Favs = ({ fav, setFav }) => {
       
     return(
         <>
-            <h3>Favoritos</h3>
+            <h3>Favoritos ❤️</h3>
             <div className="dogs__container">
                 {fav.length > 0 ?
                 fav.map(item => 
@@ -16,10 +16,14 @@ const Favs = ({ fav, setFav }) => {
                         <span onClick={() => deleteFav(item)} className="fav__heart">❤️</span>
                     </div>
                     )
-                : <p>No agregaste ningún favorito aun</p>
+                : <p style={{textAlign: 'center'}}>No agregaste ningún favorito aun.<br></br> Para hacerlo toca sobre el corazon 🤍 de la imagen que desees</p>
                 }
             </div>
-      </>
+            {fav.length > 0 ?
+                <button className="delete__button" onClick={() => setFav([])}>Quitar todos</button>
+                : null 
+            }
+        </>
     );
 }
 

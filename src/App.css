@@ -91,3 +91,9 @@ button {
   max-width: 12rem;
   max-height: 12rem;
 }
+
+.delete__button {
+  width: 8em;
+  cursor: pointer;
+  margin: 1em;
+}
