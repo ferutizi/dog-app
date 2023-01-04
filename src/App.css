@@ -7,7 +7,7 @@
   
 .dogs__container {
   background-color: rgb(252, 237, 237);
-  width: 40em;
+  width: 80em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -26,9 +26,13 @@
 }
 
 .fav__img {
-  width: 4em;
-  height: 4em;
+  width: 6em;
+  height: 6em;
   object-fit: cover;
   object-position: top right;
   border-radius: 1em;
+}
+
+.input {
+  outline: none;
 }

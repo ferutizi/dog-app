@@ -1,5 +1,7 @@
 import './App.css';
 import { useEffect, useState } from "react";
+import Dogs from './components/Dogs';
+import Favs from './components/Favs';
 
 function App() {
   const [formulario, setFormulario] = useState({name: ''})
@@ -48,48 +50,24 @@ function App() {
     setFormulario({name: ''});
   }
 
-  const addFav = (dog) => {
-    const newFav = fav.find(item => item == dog)
-    if(!newFav) {
-      setFav([...fav, dog]);
-    }
-  }
-
-  const deleteFav = (dog) => {
-    const newFav = fav.filter(item => item != dog);
-    setFav(newFav);
-  }
-
   return (
     <div className="App">
-      <h1>Dogs</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          name='name'
-          type='text'
-          value={formulario.name}
-          onChange={handleChange}
-          autoFocus
-        />
-        <button>Search</button>
-      </form>
-      <div className="dogs__container">
-        {breeds.length > 0 ?
-          breeds.slice(0, 15).map(item => 
-              <img src={item} onClick={() => addFav(item)} key={item} className="dogs__img"></img>
-            )
-          : <p>loading...</p>
-        }
+      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'start', gap: '4em'}}>
+        <h1>Dog Breeds</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            name='name'
+            type='text'
+            value={formulario.name}
+            onChange={handleChange}
+            autoFocus
+            className='input'
+          />
+          <button>Search</button>
+        </form>
       </div>
-      <h3>Favoritos</h3>
-      <div className="dogs__container">
-        {fav.length > 0 ?
-          fav.map(item => 
-              <img src={item} onClick={() => deleteFav(item)} key={item} className="fav__img"></img>
-            )
-          : <p>No agregaste ningún favorito aun</p>
-        }
-      </div>
+      <Dogs breeds={breeds} fav={fav} setFav={setFav} />
+      <Favs fav={fav} setFav={setFav} />
     </div>
   );
 }
