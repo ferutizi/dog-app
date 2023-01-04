@@ -11,7 +11,10 @@ const Favs = ({ fav, setFav }) => {
             <div className="dogs__container">
                 {fav.length > 0 ?
                 fav.map(item => 
-                    <img src={item} onClick={() => deleteFav(item)} key={item} className="fav__img"></img>
+                    <div key={item}>
+                        <img src={item} onClick={() => deleteFav(item)} className="fav__img"></img>
+                        <span className="fav__heart">❤️</span>
+                    </div>
                     )
                 : <p>No agregaste ningún favorito aun</p>
                 }

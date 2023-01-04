@@ -11,8 +11,11 @@ const Dogs = ({ breeds, fav, setFav }) => {
         <div className="dogs__container">
         {breeds.length > 0 ?
           breeds.slice(0, 15).map(item => 
-              <img src={item} onClick={() => addFav(item)} key={item} className="dogs__img"></img>
-            )
+            <div key={item} className='uno'>
+              <img src={item} onClick={() => addFav(item)} className="dogs__img"></img>
+              <span className="dog__heart">🤍</span>
+            </div>
+          )
           : <p>loading...</p>
         }
         </div>
