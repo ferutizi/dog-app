@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'start', gap: '4em'}}>
+      <div className='title__container'>
         <h1>Dog Breeds</h1>
         <form onSubmit={handleSubmit}>
           <input

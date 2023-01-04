@@ -6,7 +6,6 @@
 }
   
 .dogs__container {
-  background-color: rgb(252, 237, 237);
   width: 80em;
   display: flex;
   flex-direction: row;
@@ -15,6 +14,7 @@
   justify-content: center;
   padding: 2em 1em;
   border-radius: 1em;
+  border: 1px solid rgba(128, 128, 128, 0.322)
 }
   
 .dogs__img {
@@ -23,6 +23,7 @@
   object-fit: cover;
   object-position: top right;
   border-radius: 1em;
+  box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.7);
 }
 
 .fav__img {
@@ -35,4 +36,30 @@
 
 .input {
   outline: none;
+  width: 26em;
+  height: 2em;
+  border: none;
+  background-color: rgba(153, 153, 153, 0.219);
+  padding-left: 1em;
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+
+button {
+  background-color: rgb(87, 191, 252);
+  height: 2.1rem;
+  width: 5em;
+  border: none;
+  border-radius: 0.5em;
+  position: relative;
+  right: 12px;
+  font-size: 1em;
+}
+
+.title__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+  margin-left: 3em;
 }
