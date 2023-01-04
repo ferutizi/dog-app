@@ -82,10 +82,10 @@ function App() {
         }
       </div>
       <h3>Favoritos</h3>
-      <div className="fav__container">
+      <div className="dogs__container">
         {fav.length > 0 ?
           fav.map(item => 
-              <img src={item} onClick={() => deleteFav(item)} key={item} className="dogs__img"></img>
+              <img src={item} onClick={() => deleteFav(item)} key={item} className="fav__img"></img>
             )
           : <p>No agregaste ningún favorito aun</p>
         }
