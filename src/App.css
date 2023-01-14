@@ -15,6 +15,12 @@ button {
   position: relative;
   right: 12px;
   font-size: 1em;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+button:hover {
+  background-color: hsl(202, 96%, 61%);
 }
 
 .title__container {
