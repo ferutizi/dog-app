@@ -21,7 +21,7 @@ const Dogs = ({ breeds, fav, setFav }) => {
               <span onClick={() => addFav(item)} className="dog__heart">{fav.find(e => e == item) ? '❤️' : '🤍'}</span>
             </div>
           )
-          : <p>loading...</p>
+          : <p>Loading...</p>
         }
         </div>
     );

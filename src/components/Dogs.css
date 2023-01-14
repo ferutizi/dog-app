@@ -32,3 +32,27 @@
     max-width: 12em;
     max-height: 12em;
 }
+
+@media (width < 1300px) {
+    .dogs__container {
+        width: 60em;
+    }
+}
+
+@media (width < 1000px) {
+    .dogs__container {
+        width: 50em;
+    }
+}
+
+@media (width < 850px) {
+    .dogs__container {
+        width: 35em;
+    }
+}
+
+@media (width < 650px) {
+    .dogs__container {
+        width: 20em;
+    }
+}

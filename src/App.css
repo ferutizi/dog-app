@@ -24,3 +24,16 @@ button {
   gap: 4em;
   margin-left: 3em;
 }
+
+@media (width < 850px) {
+  .title__container {
+    width: 20em;
+    gap: 3em;
+  }
+}
+
+@media (width < 650px) {
+  .title__container {
+    gap: 1em;
+  }
+}

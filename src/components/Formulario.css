@@ -8,3 +8,18 @@
     border-radius: 0.5em;
     font-size: 1em;
 }
+
+@media (width < 850px) {
+    .input {
+      width: 16em;
+    }
+    form {
+        display: flex;
+    }
+}
+
+@media (width < 650px) {
+    .input {
+      width: 10em;
+    }
+}
