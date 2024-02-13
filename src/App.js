@@ -13,10 +13,10 @@ function App() {
   //🤍❤️
 
   useEffect(() => {
-    if(breed != '') {
-      fetchBreed(breed);
-    } else {
+    if(breed === '') {
       fetchData();  
+    } else {
+      fetchBreed(breed);
     }
   }, [breed]);
 
@@ -49,10 +49,10 @@ function App() {
   return (
     <div className="App">
       <div className='title__container'>
-        <h1>Dog Breeds</h1>
+        <h1 onClick={() => fetchData()} style={{cursor: 'pointer'}}>Dog Breeds</h1>
         <Formulario formulario={formulario} setFormulario={setFormulario} setBreed={setBreed} />
       </div>
-      <Dogs breeds={breeds} fav={fav} setFav={setFav} />
+      <Dogs breeds={breeds} fav={fav} setFav={setFav} breed={breed} />
       <Favs fav={fav} setFav={setFav} />
     </div>
   );
