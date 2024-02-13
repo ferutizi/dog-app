@@ -24,7 +24,7 @@ function App() {
     try {
       const res = await fetch('https://dog.ceo/api/breed/hound/images');
       const data = await res.json();
-      if(data.message == '') {
+      if(data.message === '') {
         return alert('La raza de perro ingresada no se pudo encontrar')
       }
       setBreeds(data.message);
@@ -37,7 +37,7 @@ function App() {
     try {
       const res = await fetch(`https://dog.ceo/api/breed/${breed}/images`);
       const data = await res.json();
-      if(data.message == '') {
+      if(data.message === '') {
         return alert('La raza de perro ingresada no se pudo encontrar')
       }
       setBreeds(data.message);
